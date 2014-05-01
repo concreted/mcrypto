@@ -1,0 +1,3 @@
+s = "hex string"
+s64 = base64.encodestring(s.decode('hex'))
+s_copy = base64.decodestring(s64).encode('hex')

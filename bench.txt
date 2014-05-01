@@ -1,0 +1,227 @@
+bG¥ÒjÒþ©ð4iÅfWÆ
+Tries: 1
+         8623 function calls in 0.654 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.002    0.002    0.654    0.654 2-14-2.py:4(<module>)
+        1    0.002    0.002    0.006    0.006 AES.py:45(<module>)
+        1    0.000    0.000    0.000    0.000 AES.py:52(AESCipher)
+       53    0.000    0.000    0.004    0.000 AES.py:55(__init__)
+       53    0.000    0.000    0.004    0.000 AES.py:61(new)
+        1    0.000    0.000    0.000    0.000 Counter.py:116(_encode)
+        1    0.001    0.001    0.001    0.001 Counter.py:53(<module>)
+        1    0.000    0.000    0.000    0.000 Counter.py:63(new)
+        1    0.000    0.000    0.001    0.001 FortunaAccumulator.py:100(__init__)
+       39    0.001    0.000    0.020    0.001 FortunaAccumulator.py:112(random_data)
+        1    0.000    0.000    0.000    0.000 FortunaAccumulator.py:124(_reseed)
+      181    0.002    0.000    0.009    0.000 FortunaAccumulator.py:137(add_random_event)
+        1    0.008    0.008    0.056    0.056 FortunaAccumulator.py:25(<module>)
+        1    0.000    0.000    0.000    0.000 FortunaAccumulator.py:41(FortunaPool)
+       32    0.000    0.000    0.001    0.000 FortunaAccumulator.py:54(__init__)
+      543    0.002    0.000    0.007    0.000 FortunaAccumulator.py:57(append)
+        1    0.000    0.000    0.000    0.000 FortunaAccumulator.py:61(digest)
+       33    0.000    0.000    0.001    0.000 FortunaAccumulator.py:70(reset)
+        1    0.000    0.000    0.000    0.000 FortunaAccumulator.py:74(which_pools)
+        1    0.000    0.000    0.000    0.000 FortunaAccumulator.py:95(FortunaAccumulator)
+       39    0.001    0.000    0.018    0.000 FortunaGenerator.py:103(_pseudo_random_data)
+       77    0.004    0.000    0.007    0.000 FortunaGenerator.py:121(_generate_blocks)
+        1    0.005    0.005    0.028    0.028 FortunaGenerator.py:25(<module>)
+        1    0.000    0.000    0.000    0.000 FortunaGenerator.py:40(AESGenerator)
+        1    0.000    0.000    0.000    0.000 FortunaGenerator.py:65(__init__)
+        1    0.000    0.000    0.000    0.000 FortunaGenerator.py:78(reseed)
+       39    0.001    0.000    0.018    0.000 FortunaGenerator.py:86(pseudo_random_data)
+       39    0.006    0.000    0.010    0.000 FortunaGenerator.py:99(_set_key)
+        1    0.004    0.004    0.007    0.007 SHA256.py:35(<module>)
+        1    0.000    0.000    0.000    0.000 SHA256.py:52(SHA256Hash)
+       72    0.000    0.000    0.001    0.000 SHA256.py:71(__init__)
+       36    0.000    0.000    0.000    0.000 SHA256.py:74(new)
+       36    0.000    0.000    0.001    0.000 SHA256.py:77(new)
+        1    0.011    0.011    0.018    0.018 SHAd256.py:29(<module>)
+        1    0.000    0.000    0.000    0.000 SHAd256.py:45(_SHAd256)
+       34    0.000    0.000    0.000    0.000 SHAd256.py:55(__init__)
+        2    0.000    0.000    0.000    0.000 SHAd256.py:66(digest)
+      543    0.003    0.000    0.005    0.000 SHAd256.py:83(update)
+       34    0.000    0.000    0.001    0.000 SHAd256.py:90(new)
+       39    0.000    0.000    0.486    0.012 _UserFriendlyRNG.py:104(read)
+       38    0.000    0.000    0.000    0.000 _UserFriendlyRNG.py:127(_check_pid)
+        1    0.000    0.000    0.000    0.000 _UserFriendlyRNG.py:141(_LockingUserFriendlyRNG)
+        1    0.000    0.000    0.069    0.069 _UserFriendlyRNG.py:142(__init__)
+        1    0.000    0.000    0.035    0.035 _UserFriendlyRNG.py:153(reinit)
+       39    0.000    0.000    0.487    0.012 _UserFriendlyRNG.py:160(read)
+        1    0.000    0.000    0.000    0.000 _UserFriendlyRNG.py:167(RNGFile)
+       16    0.000    0.000    0.000    0.000 _UserFriendlyRNG.py:168(__init__)
+       39    0.000    0.000    0.487    0.012 _UserFriendlyRNG.py:184(read)
+       16    0.000    0.000    0.069    0.004 _UserFriendlyRNG.py:195(_get_singleton)
+       16    0.000    0.000    0.069    0.004 _UserFriendlyRNG.py:205(new)
+        1    0.007    0.007    0.065    0.065 _UserFriendlyRNG.py:25(<module>)
+        1    0.000    0.000    0.000    0.000 _UserFriendlyRNG.py:40(_EntropySource)
+        3    0.000    0.000    0.000    0.000 _UserFriendlyRNG.py:41(__init__)
+      181    0.001    0.000    0.010    0.000 _UserFriendlyRNG.py:46(feed)
+        1    0.000    0.000    0.000    0.000 _UserFriendlyRNG.py:50(_EntropyCollector)
+        1    0.000    0.000    0.032    0.032 _UserFriendlyRNG.py:52(__init__)
+        1    0.000    0.000    0.035    0.035 _UserFriendlyRNG.py:58(reinit)
+       39    0.001    0.000    0.466    0.012 _UserFriendlyRNG.py:68(collect)
+        1    0.000    0.000    0.000    0.000 _UserFriendlyRNG.py:81(_UserFriendlyRNG)
+        1    0.000    0.000    0.069    0.069 _UserFriendlyRNG.py:83(__init__)
+        1    0.000    0.000    0.035    0.035 _UserFriendlyRNG.py:89(reinit)
+        1    0.000    0.000    0.000    0.000 __init__.py:1(<module>)
+        2    0.004    0.002    0.076    0.038 __init__.py:25(<module>)
+       16    0.000    0.000    0.069    0.004 __init__.py:31(new)
+        1    0.000    0.000    0.000    0.000 __init__.py:32(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:37(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:42(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:50(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:73(<module>)
+        1    0.000    0.000    0.000    0.000 _number_new.py:27(<module>)
+       39    0.001    0.000    0.001    0.000 _number_new.py:34(ceil_shift)
+       40    0.000    0.000    0.000    0.000 _number_new.py:50(ceil_div)
+        1    0.000    0.000    0.000    0.000 _number_new.py:69(exact_log2)
+        1    0.000    0.000    0.000    0.000 _number_new.py:93(exact_div)
+       53    0.000    0.000    0.000    0.000 blockalgo.py:124(_getParameter)
+        1    0.000    0.000    0.000    0.000 blockalgo.py:133(BlockAlgo)
+       53    0.001    0.000    0.004    0.000 blockalgo.py:136(__init__)
+       90    0.000    0.000    0.003    0.000 blockalgo.py:187(encrypt)
+        1    0.003    0.003    0.004    0.004 blockalgo.py:22(<module>)
+        1    0.000    0.000    0.000    0.000 hashalgo.py:21(<module>)
+        1    0.000    0.000    0.000    0.000 hashalgo.py:23(HashAlgo)
+       72    0.000    0.000    0.000    0.000 hashalgo.py:34(__init__)
+      546    0.001    0.000    0.002    0.000 hashalgo.py:53(update)
+        4    0.000    0.000    0.000    0.000 hashalgo.py:71(digest)
+        1    0.003    0.003    0.003    0.003 hashlib.py:55(<module>)
+        6    0.000    0.000    0.000    0.000 hashlib.py:94(__get_openssl_constructor)
+        1    0.013    0.013    0.091    0.091 mclib.py:1(<module>)
+       14    0.000    0.000    0.000    0.000 mclib.py:104(pad_PKCS7)
+       14    0.000    0.000    0.000    0.000 mclib.py:110(pad16)
+       14    0.000    0.000    0.000    0.000 mclib.py:14(Base64ToHex)
+       15    0.000    0.000    0.562    0.037 mclib.py:162(inconsistent_encryption_oracle)
+       14    0.000    0.000    0.001    0.000 mclib.py:181(encrypt_ECB)
+        1    0.000    0.000    0.562    0.562 mclib.py:278(find_appended_random)
+        1    0.002    0.002    0.002    0.002 nt.py:25(<module>)
+        1    0.000    0.000    0.000    0.000 nt.py:31(WindowsRNG)
+        1    0.000    0.000    0.032    0.032 nt.py:35(__init__)
+       87    0.003    0.000    0.502    0.006 nt.py:39(flush)
+       43    0.001    0.000    0.486    0.011 nt.py:61(_read)
+        1    0.000    0.000    0.032    0.032 nt.py:71(new)
+        1    0.022    0.022    0.022    0.022 number.py:27(<module>)
+       24    0.002    0.000    0.003    0.000 number.py:417(bytes_to_long)
+       25    0.000    0.000    0.000    0.000 number.py:75(size)
+        1    0.001    0.001    0.001    0.001 pct_warnings.py:30(<module>)
+        1    0.000    0.000    0.000    0.000 pct_warnings.py:30(CryptoWarning)
+        1    0.000    0.000    0.000    0.000 pct_warnings.py:33(CryptoDeprecationWarning)
+        1    0.000    0.000    0.000    0.000 pct_warnings.py:36(CryptoRuntimeWarning)
+        1    0.000    0.000    0.000    0.000 pct_warnings.py:43(RandomPool_DeprecationWarning)
+        1    0.000    0.000    0.000    0.000 pct_warnings.py:46(ClockRewindWarning)
+        1    0.000    0.000    0.000    0.000 pct_warnings.py:49(GetRandomNumber_DeprecationWarning)
+        1    0.000    0.000    0.000    0.000 pct_warnings.py:52(PowmInsecureWarning)
+        1    0.000    0.000    0.000    0.000 py3compat.py:59(<module>)
+      178    0.000    0.000    0.000    0.000 py3compat.py:66(b)
+      378    0.000    0.000    0.001    0.000 py3compat.py:68(bchr)
+        2    0.000    0.000    0.000    0.000 py3compat.py:70(bstr)
+        1    0.000    0.000    0.000    0.000 random.py:25(<module>)
+        1    0.000    0.000    0.000    0.000 random.py:35(StrongRandom)
+        1    0.000    0.000    0.000    0.000 random.py:36(__init__)
+       25    0.000    0.000    0.314    0.013 random.py:46(getrandbits)
+       15    0.000    0.000    0.315    0.021 random.py:53(randrange)
+       15    0.000    0.000    0.315    0.021 random.py:87(randint)
+        4    0.000    0.000    0.001    0.000 re.py:188(compile)
+        4    0.000    0.000    0.001    0.000 re.py:226(_compile)
+        1    0.000    0.000    0.000    0.000 rng_base.py:24(<module>)
+        1    0.000    0.000    0.000    0.000 rng_base.py:30(BaseRNG)
+        1    0.000    0.000    0.016    0.016 rng_base.py:32(__init__)
+        1    0.000    0.000    0.016    0.016 rng_base.py:39(_selftest)
+       87    0.000    0.000    0.000    0.000 rng_base.py:63(flush)
+       43    0.000    0.000    0.486    0.011 rng_base.py:66(read)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:32(_compile)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:361(_compile_info)
+        8    0.000    0.000    0.000    0.000 sre_compile.py:474(isstring)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:480(_code)
+        4    0.000    0.000    0.001    0.000 sre_compile.py:495(compile)
+       22    0.000    0.000    0.000    0.000 sre_parse.py:138(append)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:140(getwidth)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:178(__init__)
+       34    0.000    0.000    0.000    0.000 sre_parse.py:182(__next)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:195(match)
+       30    0.000    0.000    0.000    0.000 sre_parse.py:201(get)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:301(_parse_sub)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:379(_parse)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:663(parse)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:67(__init__)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:90(__init__)
+        1    0.001    0.001    0.002    0.002 threading.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 threading.py:103(_RLock)
+        2    0.000    0.000    0.000    0.000 threading.py:180(Condition)
+        1    0.000    0.000    0.000    0.000 threading.py:183(_Condition)
+        2    0.000    0.000    0.000    0.000 threading.py:185(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:225(_is_owned)
+        1    0.000    0.000    0.000    0.000 threading.py:276(notify)
+        1    0.000    0.000    0.000    0.000 threading.py:294(notifyAll)
+        1    0.000    0.000    0.000    0.000 threading.py:303(_Semaphore)
+        1    0.000    0.000    0.000    0.000 threading.py:351(_BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 threading.py:363(Event)
+        1    0.000    0.000    0.000    0.000 threading.py:366(_Event)
+        1    0.000    0.000    0.000    0.000 threading.py:370(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:384(set)
+        1    0.000    0.000    0.000    0.000 threading.py:423(Thread)
+        1    0.000    0.000    0.000    0.000 threading.py:435(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:530(_set_ident)
+        1    0.000    0.000    0.000    0.000 threading.py:55(_Verbose)
+        4    0.000    0.000    0.000    0.000 threading.py:57(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:62(_note)
+        1    0.000    0.000    0.000    0.000 threading.py:732(_Timer)
+        1    0.000    0.000    0.000    0.000 threading.py:761(_MainThread)
+        1    0.000    0.000    0.000    0.000 threading.py:763(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:770(_set_daemon)
+        1    0.000    0.000    0.000    0.000 threading.py:801(_DummyThread)
+        2    0.000    0.000    0.001    0.001 warnings.py:45(filterwarnings)
+       53    0.003    0.000    0.003    0.000 {Crypto.Cipher._AES.new}
+        1    0.016    0.016    0.016    0.016 {Crypto.Random.OSRNG.winrandom.new}
+        1    0.000    0.000    0.000    0.000 {Crypto.Util._counter._newLE}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_md5}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha1}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha224}
+       73    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha256}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha384}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha512}
+        4    0.000    0.000    0.000    0.000 {_sre.compile}
+       12    0.000    0.000    0.000    0.000 {_sre.getlower}
+       78    0.000    0.000    0.000    0.000 {_struct.pack}
+       24    0.000    0.000    0.000    0.000 {_struct.unpack}
+       14    0.000    0.000    0.000    0.000 {binascii.a2b_base64}
+       14    0.000    0.000    0.000    0.000 {binascii.hexlify}
+       14    0.000    0.000    0.000    0.000 {binascii.unhexlify}
+       90    0.003    0.000    0.003    0.000 {built-in method encrypt}
+      130    0.500    0.004    0.500    0.004 {built-in method get_bytes}
+      405    0.000    0.000    0.000    0.000 {chr}
+       42    0.000    0.000    0.000    0.000 {divmod}
+        6    0.000    0.000    0.000    0.000 {getattr}
+       40    0.000    0.000    0.000    0.000 {globals}
+       72    0.000    0.000    0.000    0.000 {hasattr}
+      338    0.001    0.000    0.001    0.000 {isinstance}
+        2    0.000    0.000    0.000    0.000 {issubclass}
+     1336    0.000    0.000    0.000    0.000 {len}
+       78    0.000    0.000    0.000    0.000 {math.floor}
+       58    0.000    0.000    0.000    0.000 {method 'acquire' of 'thread.lock' objects}
+      227    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        4    0.000    0.000    0.000    0.000 {method 'digest' of '_hashlib.HASH' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        2    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+       57    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        4    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+      116    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       57    0.000    0.000    0.000    0.000 {method 'release' of 'thread.lock' objects}
+        2    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+       14    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+      546    0.001    0.000    0.001    0.000 {method 'update' of '_hashlib.HASH' objects}
+        8    0.000    0.000    0.000    0.000 {min}
+       39    0.000    0.000    0.000    0.000 {nt.getpid}
+       21    0.000    0.000    0.000    0.000 {ord}
+       33    0.000    0.000    0.000    0.000 {range}
+        5    0.000    0.000    0.000    0.000 {thread.allocate_lock}
+        2    0.000    0.000    0.000    0.000 {thread.get_ident}
+       39    0.000    0.000    0.000    0.000 {time.clock}
+       78    0.000    0.000    0.000    0.000 {time.time}
+
+
