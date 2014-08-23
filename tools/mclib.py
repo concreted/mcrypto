@@ -104,6 +104,8 @@ def detectECB(ciphertext):
 def pad_PKCS7(block, size):
 	diff = size - len(block)
 	assert diff >= 0
+	if diff == 0:
+		diff = 16
 	pad = chr(diff) * diff
 	return block + pad
 	
@@ -115,7 +117,7 @@ def pad16(text):
 	
 def unpad(text):
 	pad = text[-1]
-	if ord(pad) < 16 and set(text[-ord(pad):]) == set(pad):
+	if ord(pad) <= 16 and set(text[-ord(pad):]) == set(pad):
 		return text[:len(text) - ord(pad)]
 	raise Exception("PKCS7 - bad padding")
 	
@@ -189,6 +191,10 @@ def encrypt_CBC(enc_alg, text, key, iv="\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 	size = len(text)
 	blocks = [text[i:i+blocksize] for i in range(0, size, blocksize)]
 	blocks[-1] = pad_PKCS7(blocks[-1], blocksize)
+	if len(blocks[-1]) == 32:
+		padding_block = blocks[-1][16:]
+		blocks[-1] = blocks[-1][0:16]
+		blocks.append(padding_block)
 
 	text = ba.unhexlify(XOR_ASCII(blocks[0], iv))
 
@@ -199,6 +205,8 @@ def encrypt_CBC(enc_alg, text, key, iv="\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 		blocks[i] = enc_alg(text, key, iv)
 
 	return ''.join(blocks)
+
+
 	
 # decrypt_CBC(dec_alg, text, key, iv, blocksize)
 # Decrypt given text with encryption algorithm dec_alg in CBC mode
