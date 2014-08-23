@@ -13,6 +13,9 @@ def hexToBase64(s):
 # Convert base 64 string to hex without leading/trailing whitespace.
 def Base64ToHex(s):
 	return ba.hexlify(ba.a2b_base64(s)).strip()
+
+def Base64ToASCII(s):
+	return ba.unhexlify(Base64ToHex(s))
 	
 # ASCIIToBinary(string s)
 # Convert ASCII string to binary (left-padded to 8 digits).
