@@ -20,7 +20,7 @@ class Generator:
     def generate(self):
         # Choose random string
         index = randint(0,len(self.strings)-1)
-        chosen = self.strings[0] # pad16(self.strings[index])
+        chosen = self.strings[index]
         
         ciphertext = encrypt_CBC(encrypt_ECB, chosen, self.key, self.iv, 16)
         
@@ -28,7 +28,7 @@ class Generator:
 
     def decrypt(self, ciphertext):
         plaintext = decrypt_CBC(decrypt_ECB, ciphertext, self.key, self.iv, 16)
-        
+
         # Check padding
         try: 
             unpad(plaintext)
@@ -36,16 +36,47 @@ class Generator:
         except:
             return False
 
-
-def breakGenerator(ciphertext, iv):
+def breakGenerator(server, ciphertext, iv):
     # Padding oracle attack
     
-    #==========FILL ME IN==========#
-    pass
+    ciphertext = bytearray(iv) + bytearray(ciphertext)
+
+    result = bytearray()
+    
+    #========== MAIN LOOP ==========#
+    while len(ciphertext) >= 32:
+        plaintext = bytearray([0] * 16)
+
+        prev_block = ciphertext[-32:-16]
+        block = ciphertext[-16:]
+
+        ciphertext = ciphertext[:-16]
+
+        c_prime = bytearray([0] * 16)
+
+        pad = 1
+
+        #========== Block decryption loop ==========#
+        for i in range(15, -1, -1):
+            for n in range(pad-1):
+                K = 15-n
+                c_prime[K] = pad ^ plaintext[K] ^ prev_block[K]
+
+            while not server.decrypt(str(c_prime + block)):
+                c_prime[i] += 1
+
+            plaintext[i] = c_prime[i] ^ prev_block[i] ^ pad
+
+            pad += 1
+
+        result = plaintext + result
+
+    return str(result)
 
 g = Generator()
-c = g.generate()
+ciphertext, iv = g.generate()
 
-print g.decrypt(c[0])                    # Should be True
-print g.decrypt('asdfasdfasdfasdf')      # Should be False
+#print g.decrypt(c[0])                    # Should be True
+#print g.decrypt('asdfasdfasdfasdf')      # Should be False
 
+print unpad(breakGenerator(g, ciphertext, iv))
