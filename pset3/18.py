@@ -39,4 +39,4 @@ def decrypt_CTR(ciphertext, key, nonce=0):
 c = Base64ToASCII("L77na/nrFsKvynd6HzOoG7GHTLXsTVu9qvY/2syLXzhPweyyMTJULu/6/kXX0KSvoOLSFQ==")
 key = "YELLOW SUBMARINE"
 
-print ba.unhexlify(decrypt_CTR(c, key))
+print decrypt_CTR(c, key)

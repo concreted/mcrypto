@@ -22,17 +22,19 @@ def Base64ToASCII(s):
 def ASCIIToBinary(s):
 	return "".join([(bin(ord(c))[2:]).zfill(8) for c in s])
 	
-# XOR(string x, string y)
-# XOR two equal-length hex strings together.
-def XOR(x, y):
+# XOR_Hex(string x, string y)
+# XOR two equal-length hex strings together. Returns hex value.
+def XOR_Hex(x, y):
 	assert len(x) == len(y)
 
-	return ba.hexlify(bytearray([ord(a) ^ ord(b) for a, b in zip(ba.unhexlify(x), ba.unhexlify(y))]))
+	return ba.hexlify(XOR_ASCII(ba.unhexlify(x), ba.unhexlify(y)))
 	
 # XOR_ASCII(string x, string y)
-# XOR two ASCII strings together.
+# XOR two ASCII strings together. Returns a string.
 def XOR_ASCII(x, y):
-	return XOR(ba.hexlify(x), ba.hexlify(y))
+	assert len(x) == len(y)
+
+	return str(bytearray([ord(a) ^ ord(b) for a, b in zip(x, y)]))
 	
 # XOR_SingleChar(string ciphertext, int charascii_dec)
 # XOR a hex string with a single char (ASCII decimal value)
