@@ -42,7 +42,7 @@ def XOR_SingleChar(ciphertext, charascii_dec):
 	singleChar = '%02x' % charascii_dec
 	cipher = singleChar * (len(ciphertext)/2)
 	
-	return ba.unhexlify(XOR(cipher, ciphertext))
+	return ba.unhexlify(XOR_Hex(cipher, ciphertext))
 	
 # XOR_RepeatingKey(string plaintext, string key)
 # XOR an ASCII string plaintext with a short ASCII key.
@@ -59,7 +59,7 @@ def XOR_RepeatingKey(plaintext, key):
 # to find result most likely to be plain English.
 # Return best candidate ASCII char, and XOR result.
 def find_XOR_SingleChar(ciphertext):
-	return max( map( lambda x: (alphaMetric(x[1]), chr(x[0]), x[1], x[2]), [ (i, XOR_SingleChar(ciphertext, i), ciphertext) for i in range(128) ] ) , key=lambda x: x[0] )
+	return max( map( lambda x: (alphaMetric(x[1]), chr(x[0]), x[1], x[2]), [ (i, XOR_SingleChar(ciphertext, i), ciphertext) for i in range(256) ] ) , key=lambda x: x[0] )
 	
 # hammingDistance(string a, string b)
 # Calculate bitwise Hamming Distance of two ASCII strings.
