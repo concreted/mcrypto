@@ -1,33 +1,5 @@
 from mclib import *
 
-class MTStreamCipher:
-    def __init__(self, seed16):
-        self.seed = seed16 % 2**16
-        self.generator = MersenneTwister(self.seed)
-
-    def reseed(self, seed16):
-        self.seed = seed16 % 2**16
-        
-    def encrypt(self, plaintext):
-        self.generator.initialize_generator(self.seed)
-        keystream = ''
-        while len(keystream) < len(plaintext):
-            rn = self.generator.extract_number()
-
-            bin_rn = bin(rn)[2:]
-
-            while len(bin_rn) > 0:
-                char = chr(int(bin_rn[:8], 2))
-                bin_rn = bin_rn[8:]
-                keystream += char
-            
-        keystream = keystream[:len(plaintext)]
-
-        return XOR_ASCII(keystream, plaintext)
-
-    def decrypt(self, ciphertext):
-        return self.encrypt(ciphertext)
-
 text = ''.join([chr(randint(0, 255)) for i in range(randint(0, 10))])
 text += "a" * 14
 print ba.hexlify(text)
