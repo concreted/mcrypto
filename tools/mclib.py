@@ -201,12 +201,12 @@ def encrypt_CBC(enc_alg, text, key, iv="\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 		blocks[-1] = blocks[-1][0:16]
 		blocks.append(padding_block)
 
-	text = ba.unhexlify(XOR_ASCII(blocks[0], iv))
+	text = XOR_ASCII(blocks[0], iv)
 
 	blocks[0] = enc_alg(text, key, iv)
 	
 	for i in range(1, len(blocks)):
-		text = ba.unhexlify(XOR_ASCII(blocks[i], blocks[i-1]))
+		text = XOR_ASCII(blocks[i], blocks[i-1])
 		blocks[i] = enc_alg(text, key, iv)
 
 	return ''.join(blocks)
@@ -224,9 +224,9 @@ def decrypt_CBC(dec_alg, text, key, iv="\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 	for i in range (len(orig_blocks)):
 		blocks[i] = dec_alg(orig_blocks[i], key, iv)
 		if i == 0:
-			blocks[i] = ba.unhexlify(XOR_ASCII(blocks[i], iv))
+			blocks[i] = XOR_ASCII(blocks[i], iv)
 		else:
-			blocks[i] = ba.unhexlify(XOR_ASCII(blocks[i], orig_blocks[i-1]))
+			blocks[i] = XOR_ASCII(blocks[i], orig_blocks[i-1])
 
 	return ''.join(blocks)
 	
