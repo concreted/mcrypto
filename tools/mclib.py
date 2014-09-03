@@ -12,14 +12,14 @@ def hexToBase64(s):
 # Base64ToHex(string s)
 # Convert base 64 string to hex without leading/trailing whitespace.
 def Base64ToHex(s):
-	return ba.hexlify(Base64ToASCII(s))
+	return ba.hexlify(Base64ToRawBytes(s))
 
-def Base64ToASCII(s):
+def Base64ToRawBytes(s):
 	return ba.a2b_base64(s.strip())
 	
-# ASCIIToBinary(string s)
+# RawBytesToBinary(string s)
 # Convert ASCII string to binary (left-padded to 8 digits).
-def ASCIIToBinary(s):
+def RawBytesToBinary(s):
 	return "".join([(bin(ord(c))[2:]).zfill(8) for c in s])
 	
 # XOR_Hex(string x, string y)
@@ -27,11 +27,11 @@ def ASCIIToBinary(s):
 def XOR_Hex(x, y):
 	assert len(x) == len(y)
 
-	return ba.hexlify(XOR_ASCII(ba.unhexlify(x), ba.unhexlify(y)))
+	return ba.hexlify(XOR_RawBytes(ba.unhexlify(x), ba.unhexlify(y)))
 	
-# XOR_ASCII(string x, string y)
+# XOR_RawBytes(string x, string y)
 # XOR two ASCII strings together. Returns a string.
-def XOR_ASCII(x, y):
+def XOR_RawBytes(x, y):
 	assert len(x) == len(y)
 
 	return str(bytearray([ord(a) ^ ord(b) for a, b in zip(x, y)]))
@@ -52,7 +52,7 @@ def XOR_RepeatingKey(plaintext, key):
 	keysize = len(key)
 	cipher = (key * (size/keysize)) + key[:size%keysize]
 	
-	return XOR_ASCII(plaintext, cipher)
+	return XOR_RawBytes(plaintext, cipher)
 
 # find_XOR_SingleChar(string ciphertext)
 # XOR ciphertext with all 128 normal ASCII chars, 
@@ -201,12 +201,12 @@ def encrypt_CBC(enc_alg, text, key, iv="\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 		blocks[-1] = blocks[-1][0:16]
 		blocks.append(padding_block)
 
-	text = XOR_ASCII(blocks[0], iv)
+	text = XOR_RawBytes(blocks[0], iv)
 
 	blocks[0] = enc_alg(text, key, iv)
 	
 	for i in range(1, len(blocks)):
-		text = XOR_ASCII(blocks[i], blocks[i-1])
+		text = XOR_RawBytes(blocks[i], blocks[i-1])
 		blocks[i] = enc_alg(text, key, iv)
 
 	return ''.join(blocks)
@@ -224,9 +224,9 @@ def decrypt_CBC(dec_alg, text, key, iv="\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 	for i in range (len(orig_blocks)):
 		blocks[i] = dec_alg(orig_blocks[i], key, iv)
 		if i == 0:
-			blocks[i] = XOR_ASCII(blocks[i], iv)
+			blocks[i] = XOR_RawBytes(blocks[i], iv)
 		else:
-			blocks[i] = XOR_ASCII(blocks[i], orig_blocks[i-1])
+			blocks[i] = XOR_RawBytes(blocks[i], orig_blocks[i-1])
 
 	return ''.join(blocks)
 	
@@ -424,7 +424,7 @@ def encrypt_CTR(plaintext, key, nonce=0):
         
     keystream = keystream[:len(plaintext)]
     
-    return XOR_ASCII(plaintext, keystream)
+    return XOR_RawBytes(plaintext, keystream)
 
 def decrypt_CTR(ciphertext, key, nonce=0):
     return encrypt_CTR(ciphertext, key, nonce)	
@@ -499,7 +499,7 @@ class MTStreamCipher:
             
         keystream = keystream[:len(plaintext)]
 
-        return XOR_ASCII(keystream, plaintext)
+        return XOR_RawBytes(keystream, plaintext)
 
     def decrypt(self, ciphertext):
         return self.encrypt(ciphertext)
