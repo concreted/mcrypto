@@ -15,7 +15,7 @@ def Base64ToHex(s):
 	return ba.hexlify(Base64ToASCII(s))
 
 def Base64ToASCII(s):
-	return ba.a2b_base64(s).strip()
+	return ba.a2b_base64(s.strip())
 	
 # ASCIIToBinary(string s)
 # Convert ASCII string to binary (left-padded to 8 digits).
