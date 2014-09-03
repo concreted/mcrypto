@@ -6,7 +6,7 @@ f.close();
 
 key = generate_AESKey()
 
-ciphertexts = [encrypt_CTR(Base64ToASCII(plaintext), key) for plaintext in plaintexts]
+ciphertexts = [encrypt_CTR(Base64ToRawBytes(plaintext), key) for plaintext in plaintexts]
 
 key = ''
 

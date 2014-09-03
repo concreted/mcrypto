@@ -20,7 +20,7 @@ class Generator:
     def generate(self):
         # Choose random string
         index = randint(0,len(self.strings)-1)
-        chosen = Base64ToASCII(self.strings[index])
+        chosen = Base64ToRawBytes(self.strings[index])
         
         ciphertext = encrypt_CBC(encrypt_ECB, chosen, self.key, self.iv, 16)
         

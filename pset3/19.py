@@ -45,7 +45,7 @@ texts = texts.split('\n')
 
 key = generate_AESKey()
 
-ciphertexts = [encrypt_CTR(Base64ToASCII(plaintext), key) for plaintext in texts]
+ciphertexts = [encrypt_CTR(Base64ToRawBytes(plaintext), key) for plaintext in texts]
 
 key = ''
 
@@ -56,9 +56,9 @@ while True:
 
         # Generate test key to try with every other ciphertext
         if len(testword) > len(c):
-            testkey = XOR_ASCII(c, testword[:len(c)])
+            testkey = XOR_RawBytes(c, testword[:len(c)])
         else:
-            testkey = XOR_ASCII(c[:len(testword)], testword)
+            testkey = XOR_RawBytes(c[:len(testword)], testword)
 
         # Build list of results of XORing test key with other ciphertexts
         results = []
@@ -66,9 +66,9 @@ while True:
         for other_c in ciphertexts:
             test_chunk = other_c[:len(testkey)]
             if len(test_chunk) < len(testkey):
-                results.append(XOR_ASCII(test_chunk, testkey[:len(test_chunk)]))
+                results.append(XOR_RawBytes(test_chunk, testkey[:len(test_chunk)]))
             else:
-                results.append(XOR_ASCII(test_chunk, testkey))
+                results.append(XOR_RawBytes(test_chunk, testkey))
 
         # Display results that look like English text
         metric = sum([alphaMetric(result) for result in results])

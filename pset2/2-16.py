@@ -18,9 +18,9 @@ assert combine16(block16(c)) == c
 print "User entry in plaintext"
 print '%r | %r\n' % (block16(p)[2], block16(p)[3])
 
-dec = ba.unhexlify(XOR_ASCII(block16(c)[2], block2))
+dec = ba.unhexlify(XOR_RawBytes(block16(c)[2], block2))
 
-attack = ba.unhexlify(XOR_ASCII(dec, admin_string))
+attack = ba.unhexlify(XOR_RawBytes(dec, admin_string))
 
 
 modc = c[:32] + attack + c[48:]
