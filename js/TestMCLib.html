@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/css/mocha.css" />
+
+    <script src="lib/expect.js"></script>
+    <script src="lib/mocha.js"></script>
+
+    <script>
+      mocha.setup('bdd');
+    </script>
+
+    <!-- Load tests here -->
+    <script src="src/mclib.js"></script>   
+    <script src="spec/spec.js"></script>
+
+    <!-- Mocha initialization -->
+    <script>
+      onload = function() {
+        var runner = mocha.run();
+      };
+    </script>
+
+  </head>
+
+  <body>
+    <div id="mocha"></div>
+  </body>
+
+</html>
