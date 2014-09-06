@@ -68,7 +68,7 @@ var xorRawSingleChar = function(r, chr) {
     }
 
     var chrBuffer = Array(r.length+1).join(chr);
-    console.log(chrBuffer);
+    
     return xorRaw(r, chrBuffer);
 };
 
@@ -77,4 +77,22 @@ var scoreAlpha = function(text) {
     var nonAlphaChrs = text.match(/[^\w\s,!;:'"\.]/gi) || [];
     var score = (text.length - nonAlphaChrs.length) / text.length;
     return score;
+};
+
+var breakSingleByteXOR = function(rawstring) {
+    var best_score = 0;
+    var best_plaintext = '';
+    var best_byte = 0;
+    for (var i = 0; i < 256; i++) {
+	var current_plaintext = xorRawSingleChar(rawstring, String.fromCharCode(i));
+	var current_score = scoreAlpha(current_plaintext);
+
+	if (current_score > best_score) {
+	    best_score = current_score;
+	    best_plaintext = current_plaintext;
+	    best_byte = i;
+	}
+    }
+
+    return best_byte;
 };

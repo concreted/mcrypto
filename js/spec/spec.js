@@ -37,9 +37,4 @@ describe('mclib test suite', function() {
 	    expect(xorRawSingleChar('AAAA', 'z')).to.be(';;;;');
 	});
     });
-
-    describe('Plaintext evaluation', function() {
-	
-    });
-
 });
